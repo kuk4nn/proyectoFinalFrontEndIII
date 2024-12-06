@@ -13,13 +13,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-.favButton{
-  background-color: rgba(136, 136, 136, 0.116);
-  padding: 10px;
-  border: none;
-  width: 100%;
-  cursor: pointer;
-}
+
 
 h1{
   text-align: center;
@@ -61,15 +55,19 @@ nav button{
   
 }
 
+nav button:hover{
+  background-color: #a0a0a0;
+}
+
 a{
   color: #000;
   text-decoration: none;
   margin: 5px;
   cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 a:hover{
   color: rgb(136, 136, 136);
-  transition: background-color 0.3s ease, color 0.3s ease;
 } 
 
 .dark nav{
@@ -87,6 +85,10 @@ a:hover{
 
 .dark #navbar button{
   background-color: white;
+}
+
+.dark #navbar button:hover{
+  background-color: rgb(73, 73, 73);
 }
 
 /* navbar   */
@@ -120,21 +122,51 @@ footer #iconos{
 /* footer   */
 
 /* form   */
-form{
+
+form {
   display: flex;
   flex-direction: column;
+  align-items: center; 
   justify-content: space-around;
   width: 300px;
-  height: 100px;
   margin: 0 auto;
 }
 
-form > button{
-  width: 300px;
+.message {
+  height: 20px; 
+  color: red; 
+  text-align: center;
+  margin-top: 10px;
 }
 
-input{
+.success {
+  color: green; 
+}
+
+input, button {
   width: 300px;
+  padding: 8px;
+  margin-top: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button {
+  background-color: grey;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #e6e6e6;
+}
+
+.dark button {
+  background-color: #242424;
+}
+
+.dark button:hover {
+  background-color: rgb(80, 80, 80);
 }
 
 /* form   */
@@ -149,12 +181,13 @@ input{
   width: 200px;
   padding: 0.5rem 0.5rem 0 0.5rem;
   border: 0.5px solid rgb(136, 136, 136);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: border 0.3s ease, color 0.3s ease;
 }
 
 
 .card:hover{
   border: 0.5px solid rgb(206, 217, 142);
-  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .card-grid{
@@ -167,16 +200,25 @@ input{
   margin: 0 auto;
 }
 
-
+.favButton{
+  background-color: rgba(0, 0, 0, 0.116);
+  padding: 10px;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
 
 .favButton {
   margin-top: auto;
 }
 
 .favButton:hover {
-  background-color: #e6e6e6;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: #000000;
 }
+
+
+
 /*   card   */
 
 /*   theme   */
@@ -190,3 +232,26 @@ input{
 }
 
 /*   theme   */
+
+/*  detail  */
+
+table {
+  border-collapse: collapse;
+     border-spacing: 0;
+     width: 100%;
+     display: table;
+     border: 1px solid #ccc;
+ 
+ }
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+/*  detail  */

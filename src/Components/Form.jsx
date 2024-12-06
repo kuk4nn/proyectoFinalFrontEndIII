@@ -2,14 +2,16 @@ import React, { useState } from "react";
 
 const Form = () => {
   const [formData, setFormData] = useState({ name: "", email: "" });
-  const [errorMessage, setErrorMessage] = useState(""); // Mensaje de error general
-  const [successMessage, setSuccessMessage] = useState(""); // Mensaje de éxito
+  const [errorMessage, setErrorMessage] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
-    setErrorMessage(""); // Limpia el mensaje de error al modificar campos
-    setSuccessMessage(""); // Limpia el mensaje de éxito al modificar campos
+    if (errorMessage || successMessage) {
+      setErrorMessage("");
+      setSuccessMessage("");
+    }
   };
 
   const validate = () => {
@@ -26,13 +28,11 @@ const Form = () => {
     e.preventDefault();
     if (!validate()) {
       setErrorMessage("Por favor verifique su información nuevamente.");
-      setSuccessMessage(""); // Limpia cualquier mensaje de éxito previo
+      setSuccessMessage("");
     } else {
-      setErrorMessage(""); // Limpia el mensaje de error
-      setSuccessMessage(
-        `Gracias ${formData.name}, te contactaremos cuanto antes vía mail.`
-      );
-      setFormData({ name: "", email: "" }); // Limpia los campos del formulario
+      setSuccessMessage(`Gracias ${formData.name}, te contactaremos cuanto antes vía mail.`);
+      setErrorMessage("");
+      setFormData({ name: "", email: "" });
     }
   };
 
@@ -58,12 +58,13 @@ const Form = () => {
           placeholder="E-mail"
         />
       </div>
-      <button type="submit">Send</button>
-      {errorMessage && <p className="error">{errorMessage}</p>}
-      {successMessage && <p className="success">{successMessage}</p>}
+      <button type="submit">Enviar</button>
+      <div className="message error">{errorMessage}</div>
+      <div className="message success">{successMessage}</div>
     </form>
   );
 };
 
 export default Form;
+
 
