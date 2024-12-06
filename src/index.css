@@ -217,7 +217,13 @@ button:hover {
   background-color: #000000;
 }
 
+.dark .card h3{
+  color: white;
+}
 
+.dark .card p{
+  color: white;
+}
 
 /*   card   */
 
