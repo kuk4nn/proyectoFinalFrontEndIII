@@ -1,10 +1,12 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: white;
+  color: black;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 code {
@@ -23,11 +25,40 @@ h1{
   text-align: center;
 }
 
-nav{
+
+/* navbar   */
+
+nav #dhodont{
+  align-items: center;
   display: flex;
-  width: 80vw;
-  justify-content: flex-start;
+}
+
+nav #dhodont img{
+  border-radius: 20%;
+  height: 50px;
+  width: 50px;
+}
+
+nav #dhodont h4{
+  padding-left: 1rem;
+}
+
+nav{
+  align-items: center;
+  display: flex;
+  justify-content: space-evenly;
   padding: 1rem;
+  background-color: #eeeded;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav button{
+  height: 50px;
+  background-color: black;
+  border-radius: 20%;
+  width: 50px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  
 }
 
 a{
@@ -38,29 +69,57 @@ a{
 }
 a:hover{
   color: rgb(136, 136, 136);
+  transition: background-color 0.3s ease, color 0.3s ease;
 } 
 
+.dark nav{
+  background-color: #242424;
+}
+
+.dark #navbar a{
+  color: white;
+}
+
+.dark #navbar a:hover{
+  color: #a0a0a0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark #navbar button{
+  background-color: white;
+}
+
+/* navbar   */
+
+/* footer   */
 footer {
+  background-color: #db2a2a;
   display: flex;
-  justify-content: center;
-  text-align: center;
-  padding: 2rem;
-  position: relative;
-  bottom: 0;
-  width: 90%;
   height: 40px;
-  margin-top: 2rem;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  width: 100%;
 }
 
-footer > img{
-  width: 200px;
-  margin: 0;
-}
-footer > p{
-  margin: 0;
-  padding-top: 0.7rem;
+footer #DH{
+  display: flex;
 }
 
+
+footer #iconos{
+  display: flex;
+  justify-content: space-around;
+}
+
+footer #iconos{
+  color: black;
+}
+
+/* footer   */
+
+/* form   */
 form{
   display: flex;
   flex-direction: column;
@@ -69,6 +128,18 @@ form{
   height: 100px;
   margin: 0 auto;
 }
+
+form > button{
+  width: 300px;
+}
+
+input{
+  width: 300px;
+}
+
+/* form   */
+
+/*   card   */
 
 .card{
   display: flex;
@@ -80,8 +151,10 @@ form{
   border: 0.5px solid rgb(136, 136, 136);
 }
 
+
 .card:hover{
   border: 0.5px solid rgb(206, 217, 142);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .card-grid{
@@ -94,24 +167,19 @@ form{
   margin: 0 auto;
 }
 
-table {
- border-collapse: collapse;
-    border-spacing: 0;
-    width: 100%;
-    display: table;
-    border: 1px solid #ccc;
 
+
+.favButton {
+  margin-top: auto;
 }
 
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
+.favButton:hover {
+  background-color: #e6e6e6;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
+/*   card   */
 
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
+/*   theme   */
 
 .dark{
   background-color: #12121296;
@@ -120,3 +188,5 @@ tr:nth-child(even) {
 .dark > a {
   color: white;
 }
+
+/*   theme   */
